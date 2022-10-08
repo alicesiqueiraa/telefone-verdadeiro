@@ -1,0 +1,63 @@
+/api/node_modules
+
+/app/node_modules
+
+/app/.pnp
+/app/.pnp.js
+/app/coverage
+
+/app/.next/
+/app/out/
+
+/app/build
+
+/app/.DS_Store
+/app/*.pem
+
+/app/npm-debug.log*
+/app/yarn-debug.log*
+/app/yarn-error.log*
+/app/.pnpm-debug.log*
+
+/app/.env*.local
+
+/app/.vercel
+
+/app/*.tsbuildinfo
+/app/next-env.d.ts
+
+/api/dist
+
+/api/logs
+/api/*.log
+/api/npm-debug.log*
+/api/pnpm-debug.log*
+/api/yarn-debug.log*
+/api/yarn-error.log*
+/api/lerna-debug.log*
+
+# OS
+/api/.DS_Store
+
+# Tests
+/api/coverage
+/api/.nyc_output
+
+# IDEs and editors
+/api/.idea
+/api/.project
+/api/.classpath
+/api/.c9/
+/api/*.launch
+/api/.settings/
+/api/*.sublime-workspace
+
+# IDE - VSCode
+/api/.vscode/*
+/api/!.vscode/settings.json
+/api/!.vscode/tasks.json
+/api/!.vscode/launch.json
+/api/!.vscode/extensions.json
+
+# Keep environment variables out of version control
+/api/.env
