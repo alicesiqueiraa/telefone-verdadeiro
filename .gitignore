@@ -60,4 +60,3 @@
 /api/!.vscode/extensions.json
 
 # Keep environment variables out of version control
-/api/.env
