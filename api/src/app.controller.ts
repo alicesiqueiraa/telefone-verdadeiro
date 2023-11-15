@@ -1,9 +1,13 @@
-import { Controller, Get, Body } from '@nestjs/common';
+/* eslint-disable prettier/prettier */
+/* Body previously imported in common nestjs */
+import { Controller, Get, StreamableFile } from '@nestjs/common';
 import { Post, Response } from '@nestjs/common/decorators';
 import { AppService } from './app.service';
+import { createReadStream } from 'fs';
+import { join } from 'path';
 
 let documentsFromCSV;
-let fileName
+let fileName;
 
 @Controller()
 export class AppController {
@@ -37,4 +41,14 @@ export class AppController {
     this.appService.createManyMessages(documentsFromCSV);
 
   } 
+
+  @Get('model_download')
+  async downloadCSVfile(@Response({ passthrough: true }) res) : Promise<StreamableFile> {
+    const csvModel = createReadStream(join(process.cwd(), "campanha01.csv"));
+    res.set({
+        'Content-Type': 'application/csv',
+        'Content-Disposition': 'attachment; filename="campanha01.csv"',
+    });
+    return new StreamableFile(csvModel)
+  }
 }

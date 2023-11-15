@@ -90,7 +90,7 @@ export default function Home() {
 
           <Text mt='5' color='gray.500' fontSize='sm' fontWeight='thin'>
             Use nosso {' '}
-            <Link color='blue.500' href='#'>
+            <Link color='blue.500' href='http://localhost:3000/model_download'>
               modelo
             </Link>
             {' '}de arquivo se você tem alguma duvida.
