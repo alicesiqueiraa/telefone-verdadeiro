@@ -21,3 +21,7 @@ E tambem execute na pasta app
 Acesse o cliente através de
 
 http://localhost:3080
+
+## Arquivo CSV Exemplo
+
+https://drive.google.com/file/d/1YxDMZtuHQjqXmCCvGAPj3A0ZeTY1h4H7/view?usp=sharing
