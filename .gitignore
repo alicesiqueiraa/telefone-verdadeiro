@@ -1,4 +1,5 @@
 /api/node_modules
+/api/vercel
 
 /app/node_modules
 

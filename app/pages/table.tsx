@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import * as React from 'react';
 import { CloseIcon, CheckIcon } from '@chakra-ui/icons'
 import { Box, Button, Center, Container, Stack, Text, Table, Thead, Tbody, Tr, Td, Th, HStack } from "@chakra-ui/react";
@@ -56,7 +57,7 @@ const validMessages = data.forEach(data => {
 });
 
 const uploadData = () => {
-    fetch('http://localhost:3000/db_upload')
+    fetch('https://telefone-verdadeiro-backend.vercel.app/db_upload')
     .then(() => {
         console.log("Uploading data to db!");
         router.push('/success')
@@ -140,7 +141,7 @@ const router = useRouter();
 }
 
 export async function getServerSideProps() {
-    const res = await fetch('http://localhost:3000/uploads/payload') 
+    const res = await fetch('https://telefone-verdadeiro-backend.vercel.app/uploads/payload') 
     const data = await res.json()
 
     return { props: { data }}

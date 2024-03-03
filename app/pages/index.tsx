@@ -38,7 +38,7 @@ export default function Home() {
 
       const fileName = file.name
 
-      fetch("http://localhost:3000/csv_upload", {
+      fetch("https://telefone-verdadeiro-backend.vercel.app/csv_upload", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -90,7 +90,7 @@ export default function Home() {
 
           <Text mt='5' color='gray.500' fontSize='sm' fontWeight='thin'>
             Use nosso {' '}
-            <Link color='blue.500' href='http://localhost:3000/model_download'>
+            <Link color='blue.500' href='https://telefone-verdadeiro-backend.vercel.app/model_download'>
               modelo
             </Link>
             {' '}de arquivo se você tem alguma duvida.
