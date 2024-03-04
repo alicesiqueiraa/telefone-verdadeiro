@@ -22,7 +22,7 @@ export class AppController {
 
     documentsFromCSV = this.appService.validatePhone(documentsFromCSV)
 
-    return console.log("CSV Uploaded!");
+/*     return console.log("CSV Uploaded!"); */
 
   }
 
