@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 /* Body previously imported in common nestjs */
-import { Controller, Get, StreamableFile } from '@nestjs/common';
+import { Controller, Get, HttpStatus, StreamableFile } from '@nestjs/common';
 import { Post, Response } from '@nestjs/common/decorators';
 import { AppService } from './app.service';
 import { createReadStream } from 'fs';
@@ -22,7 +22,7 @@ export class AppController {
 
     documentsFromCSV = this.appService.validatePhone(documentsFromCSV)
 
-/*     return console.log("CSV Uploaded!"); */
+    res.status(HttpStatus.ACCEPTED).send("csv file received");
 
   }
 

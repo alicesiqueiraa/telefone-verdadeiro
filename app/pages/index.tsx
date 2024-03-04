@@ -18,14 +18,14 @@ export default function Home() {
     inputRef.current.click()
   }
 
-  const handleUploadCSV = () => {
+  async function handleUploadCSV(){
     setUploading(true);
 
     const input = inputRef?.current;
     const reader = new FileReader();
     const [file] = input.files;
 
-    reader.onloadend = ({ target }) => {
+    reader.onloadend = async ({ target }) => {
 
       let output = 'numero;mensagem\r\n\r\n' + target.result
 
@@ -38,25 +38,25 @@ export default function Home() {
 
       const fileName = file.name
 
-      fetch("https://telefone-verdadeiro-backend.vercel.app/csv_upload", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          csv: csv?.data,
-          file: fileName
+      
+      await fetch("https://telefone-verdadeiro-backend.vercel.app/csv_upload", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            csv: csv?.data,
+            file: fileName
+          })
         })
-      })
-      .then(() => {
-        setUploading(false);
-        console.log("CSV Uploaded!");
+        .then(function(r) {
+          setUploading(false);
+          console.log(r.status);
+          if (!r.ok) {
+            throw new Error("HTTP STATUS: " + r.status)
+          }
 
-      })
-      .catch((error) => {
-        setUploading(false);
-        console.warn(error);
-      });
+        })
 
       router.push('/table')
 
